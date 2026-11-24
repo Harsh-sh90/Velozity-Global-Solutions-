@@ -1,0 +1,2 @@
+import {json,readBody,tokenFor} from './_shared.mjs';
+export const handler = async e =>{if(e.httpMethod==='OPTIONS')return {statusCode:204};if(e.httpMethod!=='POST')return json(405,{error:'Method not allowed'});const {password}=readBody(e);if(!process.env.ADMIN_PASSWORD||!process.env.ADMIN_SECRET)return json(503,{error:'Admin is not configured. Set ADMIN_PASSWORD and ADMIN_SECRET in Netlify environment variables.'});if(typeof password!=='string'||password!==process.env.ADMIN_PASSWORD)return json(401,{error:'Incorrect admin password'});return json(200,{token:tokenFor()})};
