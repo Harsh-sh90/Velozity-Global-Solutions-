@@ -1,0 +1,2 @@
+import {json,store} from './_shared.mjs';
+export default async e=>{if(e.httpMethod==='OPTIONS')return {statusCode:204};try{const page=e.queryStringParameters?.page;const s=store();const keys=await s.list();const rows=[];for(const k of keys.blobs){const r=await s.get(k.key,{type:'json'});if(r&&r.is_published&&(!page||r.page_slug===page))rows.push(r)}rows.sort((a,b)=>(a.sort_order||0)-(b.sort_order||0));return json(200,{records:rows})}catch(err){return json(500,{error:'Unable to load content'})}};
