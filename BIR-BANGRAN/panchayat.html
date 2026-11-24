@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#091512"><meta name="description" content="बीर बांग्रण — पंचायत इतिहास">
+<title>पंचायत | Bir Bangran</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body.panchayat-page-body{background:#0b1b17;color:#f5efe5;min-height:100vh;overflow-x:hidden}
+.panchayat-page-main{padding:125px 8vw 90px;max-width:1400px;margin:auto;position:relative;z-index:2}
+.panchayat-page-title{display:flex;gap:25px;align-items:flex-start;margin-bottom:48px}
+.panchayat-page-title .eyebrow{margin-top:9px}
+.panchayat-page-title h1{font-size:clamp(52px,8vw,92px);line-height:.9;color:#f5efe5;margin:0 0 15px;letter-spacing:-.05em}
+.panchayat-page-title p{max-width:720px;color:rgba(245,239,229,.68);line-height:1.7;margin:0;font-size:16px}
+.panchayat-back-link{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(227,189,118,.35);border-radius:999px;padding:12px 17px;color:#f5d99d;background:rgba(227,189,118,.07);font-size:12px;font-weight:800;white-space:nowrap;transition:.2s}
+.panchayat-back-link:hover{background:#e3bd76;color:#17130e;transform:translateX(-2px)}
+.panchayat-full-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.panchayat-full-card{background:#fff;border:1px solid rgba(23,19,14,.11);border-radius:24px;padding:25px;min-height:270px;box-shadow:0 12px 35px rgba(23,19,14,.08);transition:.25s;position:relative;overflow:hidden}
+.panchayat-full-card:hover{transform:translateY(-4px);box-shadow:0 20px 45px rgba(23,19,14,.12)}
+.panchayat-full-card.current{background:#fffaf0;border-color:rgba(157,113,42,.5)}
+.panchayat-full-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.panchayat-full-number{font:700 34px/1 Georgia,serif;color:#a8792f}
+.panchayat-full-badge{font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(23,19,14,.13);border-radius:999px;padding:6px 9px;color:#71675b}
+.panchayat-full-card.current .panchayat-full-badge{background:#a8792f;color:#fff;border-color:#a8792f}
+.panchayat-full-card h2{font:700 21px/1.3 Georgia,serif;letter-spacing:0;margin:0 0 8px;color:#17130e}
+.panchayat-full-period{font-size:13px;line-height:1.65;color:#766b5f;margin:0 0 20px}
+.panchayat-full-info{display:grid;grid-template-columns:.75fr 1.25fr;gap:15px;border-top:1px solid rgba(23,19,14,.1);padding-top:15px}
+.panchayat-full-info small{display:block;color:#988c7e;font-size:9px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.panchayat-full-info strong{display:block;font-size:14px;line-height:1.45;color:#17130e}
+.panchayat-full-info span{display:block;color:#766b5f;font-size:11px;margin-top:3px}
+.panchayat-panchgan-full{border-top:1px solid rgba(23,19,14,.1);margin-top:16px;padding-top:13px;color:#766b5f;font-size:12px}
+.panchayat-panchgan-full b{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#988c7e;margin-right:8px}
+@media(max-width:1050px){.panchayat-full-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){body.panchayat-page-body{background:#0b1b17}.panchayat-page-main{padding:105px 6vw 65px}.panchayat-page-title{display:block;margin-bottom:32px}.panchayat-back-link{margin-bottom:25px}.panchayat-page-title h1{font-size:58px}.panchayat-full-grid{grid-template-columns:1fr}.panchayat-full-card{min-height:0;padding:21px}.panchayat-full-info{grid-template-columns:1fr 1.3fr}}
+</style>
+
+<style>
+html{scroll-behavior:auto!important}
+*{scroll-behavior:auto!important;animation-duration:0s!important;transition-duration:0s!important}
+
+.panchayat-page-main{padding-top:145px}
+.panchayat-page-title{align-items:center}
+.panchayat-page-title h1{font-size:clamp(42px,6vw,76px);letter-spacing:-.04em}
+.panchayat-back-link{transition:background .18s,border-color .18s;color:#f5d99d}
+.panchayat-back-link:hover{transform:none}
+.panchayat-full-card:hover{transform:none}
+.panchayat-full-grid{align-items:stretch}
+@media(max-width:1150px){.panchayat-page-main{padding-top:125px}.panchayat-page-title{padding-top:12px}}
+@media(max-width:900px){.panchayat-page-main{padding:125px 5vw 70px}.panchayat-page-title{display:block}.panchayat-back-link{margin-bottom:25px}.panchayat-full-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}}
+@media(max-width:600px){.panchayat-page-main{padding:118px 18px 55px}.panchayat-page-title h1{font-size:43px}.panchayat-page-title p{font-size:14px;line-height:1.6}.panchayat-full-grid{grid-template-columns:1fr}.panchayat-full-card{padding:20px;border-radius:20px}.panchayat-full-info{grid-template-columns:1fr;gap:12px}.panchayat-full-top{margin-bottom:14px}.panchayat-full-number{font-size:30px}}
+</style>
+</head>
+<body class="panchayat-page-body">
+<div class="world" aria-hidden="true"><div class="sky-gradient"></div><div class="stars stars-a"></div><div class="stars stars-b"></div><div class="sun"></div><div class="moon"><span></span></div><div class="cloud cloud-a"></div><div class="cloud cloud-b"></div><div class="mountain mountain-far"></div><div class="mountain mountain-mid"></div><div class="mountain mountain-near"></div><div class="village-3d"><div class="field field-left"></div><div class="field field-right"></div><div class="tree tree-1"></div><div class="tree tree-2"></div><div class="tree tree-3"></div><div class="tree tree-4"></div><div class="house house-1"><i></i><b></b></div><div class="house house-2"><i></i><b></b></div><div class="house house-3"><i></i><b></b></div><div class="house house-4"><i></i><b></b></div><div class="temple"><span></span><b></b></div><div class="road"></div><div class="water"></div><div class="foreground-grass"></div><div class="bird bird-1">⌁</div><div class="bird bird-2">⌁</div><div class="bird bird-3">⌁</div><div class="firefly f1"></div><div class="firefly f2"></div><div class="firefly f3"></div><div class="firefly f4"></div><div class="firefly f5"></div></div><div class="world-vignette"></div><div class="world-grain"></div></div>
+<header class="nav">
+ <a class="logo" href="index.html?section=home"><span class="logo-mark">BB</span><span><strong>BIR BANGRAN</strong><small data-i18n="navTag">Village History & Heritage</small></span></a>
+ <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+ <nav id="mainNav">
+<a data-section="home" href="index.html?section=home" data-i18n="navHome">Home</a>
+<a data-section="introduction" href="index.html?section=introduction" data-i18n="navIntro">Village Introduction</a>
+<a data-section="history" href="index.html?section=history" data-i18n="navHistory">History</a>
+<a data-section="founders" href="index.html?section=founders" data-i18n="navFounders">Founders & Guardians</a>
+<a data-section="panchayat" class="is-active" aria-current="page" href="index.html?section=panchayat" data-i18n="navPanchayat">Panchayat</a>
+<a data-section="community" href="index.html?section=community" data-i18n="navCommunity">Community</a>
+<a data-section="education" href="index.html?section=education" data-i18n="navEducation">Education</a>
+<a data-section="health" href="index.html?section=health" data-i18n="navHealth">Health</a>
+<a data-section="religious" href="index.html?section=religious" data-i18n="navReligious">Religious Places</a>
+<a data-section="facilities" href="index.html?section=facilities" data-i18n="navFacilities">Public Facilities</a>
+<a data-section="personalities" href="index.html?section=personalities" data-i18n="navPersonalities">Prominent Personalities</a>
+<a data-section="culture" href="index.html?section=culture" data-i18n="navCulture">Culture & Heritage</a>
+<a data-section="issues" href="index.html?section=issues" data-i18n="navIssues">Problems & Solutions</a>
+<a data-section="migrants" href="index.html?section=migrants" data-i18n="navMigrants">Migrant Villagers</a>
+<a data-section="gallery" href="index.html?section=gallery" data-i18n="navGallery">Gallery</a>
+<a data-section="archive" href="index.html?section=archive" data-i18n="navArchive">Digital Archive</a>
+<a data-section="contact" href="index.html?section=contact" data-i18n="navContact">Contact</a>
+</nav>
+ <div class="nav-tools"><label class="language-select" title="Language"><span>文</span><select id="languageSelect" aria-label="Select language"><option value="hi">हिन्दी</option><option value="en">English</option></select></label></div>
+</header>
+<div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+<div class="address-strip"><div class="address-track"><span>📍 गाँव: बीर बांग्रण · तहसील: राजौंद · जिला: कैथल · हरियाणा · पिन कोड: 136044</span><span>📍 Village: Bir Bangran · Tehsil: Rajound · District: Kaithal · Haryana · PIN: 136044</span></div></div>
+<main class="panchayat-page-main">
+  <div class="panchayat-page-title">
+    <a id="panchayatBack" class="panchayat-back-link" href="index.html?section=panchayat">← Back to Panchayat</a>
+    <div><p class="eyebrow">04 / <span data-i18n="navPanchayat">Panchayat</span></p><h1 data-i18n="panchayatPageTitle">Panchayat Information</h1><p data-i18n="panchayatPageLead">Complete history of Bir Bangran Gram Panchayats from 1952 to the present, including tenure periods and Sarpanch information.</p></div>
+  </div>
+  <div class="panchayat-full-grid">
+<article class="panchayat-full-card"><div class="panchayat-full-top"><span class="panchayat-full-number">01</span><span class="panchayat-full-badge">Gram Panchayat</span></div><h2>Gram Panchayat No. 01</h2><p class="panchayat-full-period">December 1952 से November 1960 तक</p><div class="panchayat-full-info"><div><small>Tenure</small><strong>Approx. 8 years</strong></div><div><small>Sarpanch</small><strong>Mr. भरत सिंह राणा</strong><span>Jeldar Patti</span></div></div><div class="panchayat-panchgan-full"><b>Panchayat Members</b> Information can be added here when available.</div></article><article class="panchayat-full-card"><div class="panchayat-full-top"><span class="panchayat-full-number">02</span><span class="panchayat-full-badge">Gram Panchayat</span></div><h2>Gram Panchayat No. 02</h2><p class="panchayat-full-period">December 1960 से December 1963 तक</p><div class="panchayat-full-info"><div><small>Tenure</small><strong>Approx. 3 years</strong></div><div><small>Sarpanch</small><strong>Mr. भरत सिंह राणा</strong><span>Jeldar Patti</span></div></div><div class="panchayat-panchgan-full"><b>Panchayat Members</b> Information can be added here when available.</div></article><article class="panchayat-full-card"><div class="panchayat-full-top"><span class="panchayat-full-number">03</span><span class="panchayat-full-badge">Gram Panchayat</span></div><h2>Gram Panchayat No. 03</h2><p class="panchayat-full-period">January 1964 से May 1971 तक</p><div class="panchayat-full-info"><div><small>Tenure</small><strong>Approx. 7.5 years</strong></div><div><small>Sarpanch</small><strong>Mr. भरत सिंह राणा</strong><span>Nambardar Patti</span></div></div><div class="panchayat-panchgan-full"><b>Panchayat Members</b> Information can be added here when available.</div></article><article class="panchayat-full-card"><div class="panchayat-full-top"><span class="panchayat-full-number">04</span><span class="panchayat-full-badge">Gram Panchayat</span></div><h2>Gram Panchayat No. 04</h2><p class="panchayat-full-period">July 1971 से May 1978 तक</p><div class="panchayat-full-info"><div><small>Tenure</small><strong>Approx. 7 years</strong></div><div><small>Sarpanch</small><strong>Mr. सूरजमल बैरागी</strong></div></div><div class="panchayat-panchgan-full"><b>Panchayat Members</b> Information can be added here when available.</div></article><article class="panchayat-full-card"><div class="panchayat-full-top"><span class="panchayat-full-number">05</span><span class="panchayat-full-badge">Gram Panchayat</span></div><h2>Gram Panchayat No. 05</h2><p class="panchayat-full-period">June 1978 से April 1983 तक</p><div class="panchayat-full-info"><div><small>Tenure</small><strong>Approx. 5 years</strong></div><div><small>Sarpanch</small><strong>Mr. कलीराम राणा</strong></div></div><div class="panchayat-panchgan-full"><b>Panchayat Members</b> Information can be added here when available.</div></article><article class="panchayat-full-card"><div class="panchayat-full-top"><span class="panchayat-full-number">06</span><span class="panchayat-full-badge">Gram Panchayat</span></div><h2>Gram Panchayat No. 06</h2><p class="panchayat-full-period">June 1983 से May 1988 तक</p><div class="panchayat-full-info"><div><small>Tenure</small><strong>Approx. 5 years</strong></div><div><small>Sarpanch</small><strong>Mr. कलीराम राणा</strong></div></div><div class="panchayat-panchgan-full"><b>Panchayat Members</b> Information can be added here when available.</div></article><article class="panchayat-full-card"><div class="panchayat-full-top"><span class="panchayat-full-number">07</span><span class="panchayat-full-badge">Gram Panchayat</span></div><h2>Gram Panchayat No. 07</h2><p class="panchayat-full-period">June 1988 से December 1991 तक</p><div class="panchayat-full-info"><div><small>Tenure</small><strong>Approx. 2.5 years</strong></div><div><small>Sarpanch</small><strong>Mr. कँवरपाल राणा</strong></div></div><div class="panchayat-panchgan-full"><b>Panchayat Members</b> Information can be added here when available.</div></article><article class="panchayat-full-card"><div class="panchayat-full-top"><span class="panchayat-full-number">08</span><span class="panchayat-full-badge">Gram Panchayat</span></div><h2>Gram Panchayat No. 08</h2><p class="panchayat-full-period">December 1991 से November 1994 तक</p><div class="panchayat-full-info"><div><small>Tenure</small><strong>Approx. 3 years</strong></div><div><small>Sarpanch</small><strong>Mr. कलीराम राणा</strong></div></div><div class="panchayat-panchgan-full"><b>Panchayat Members</b> Information can be added here when available.</div></article><article class="panchayat-full-card"><div class="panchayat-full-top"><span class="panchayat-full-number">09</span><span class="panchayat-full-badge">Gram Panchayat</span></div><h2>Gram Panchayat No. 09</h2><p class="panchayat-full-period">December 1994 से February 2000 तक</p><div class="panchayat-full-info"><div><small>Tenure</small><strong>Approx. 5 years</strong></div><div><small>Sarpanch</small><strong>Mr. सतपाल शर्मा</strong></div></div><div class="panchayat-panchgan-full"><b>Panchayat Members</b> Information can be added here when available.</div></article><article class="panchayat-full-card"><div class="panchayat-full-top"><span class="panchayat-full-number">10</span><span class="panchayat-full-badge">Gram Panchayat</span></div><h2>Gram Panchayat No. 10</h2><p class="panchayat-full-period">12 March 2000 से March 2005 तक</p><div class="panchayat-full-info"><div><small>Tenure</small><strong>5 years</strong></div><div><small>Sarpanch</small><strong>Mr. सुभाष भट्ट</strong></div></div><div class="panchayat-panchgan-full"><b>Panchayat Members</b> Information can be added here when available.</div></article><article class="panchayat-full-card"><div class="panchayat-full-top"><span class="panchayat-full-number">11</span><span class="panchayat-full-badge">Gram Panchayat</span></div><h2>Gram Panchayat No. 11</h2><p class="panchayat-full-period">10 April 2005 से June 2010 तक</p><div class="panchayat-full-info"><div><small>Tenure</small><strong>5 years</strong></div><div><small>Sarpanch</small><strong>Mrs. संतोष देवी</strong></div></div><div class="panchayat-panchgan-full"><b>Panchayat Members</b> Information can be added here when available.</div></article><article class="panchayat-full-card"><div class="panchayat-full-top"><span class="panchayat-full-number">12</span><span class="panchayat-full-badge">Gram Panchayat</span></div><h2>Gram Panchayat No. 12</h2><p class="panchayat-full-period">10 July 2010 से December 2015 तक</p><div class="panchayat-full-info"><div><small>Tenure</small><strong>5 years</strong></div><div><small>Sarpanch</small><strong>Mr. अशोक राणा</strong></div></div><div class="panchayat-panchgan-full"><b>Panchayat Members</b> Information can be added here when available.</div></article><article class="panchayat-full-card"><div class="panchayat-full-top"><span class="panchayat-full-number">13</span><span class="panchayat-full-badge">Gram Panchayat</span></div><h2>Gram Panchayat No. 13</h2><p class="panchayat-full-period">January 2016 से October 2022 तक</p><div class="panchayat-full-info"><div><small>Tenure</small><strong>6.5 years</strong></div><div><small>Sarpanch</small><strong>Mr. परवीन नागल</strong></div></div><div class="panchayat-panchgan-full"><b>Panchayat Members</b> Information can be added here when available.</div></article><article class="panchayat-full-card current"><div class="panchayat-full-top"><span class="panchayat-full-number">14</span><span class="panchayat-full-badge">वर्तमान</span></div><h2>Gram Panchayat No. 14</h2><p class="panchayat-full-period">12 November 2022 से Present</p><div class="panchayat-full-info"><div><small>Tenure</small><strong>वर्तमान</strong></div><div><small>Sarpanch</small><strong>Mr. दीपक राणा</strong><span>वर्तमान Sarpanch</span></div></div><div class="panchayat-panchgan-full"><b>Panchayat Members</b> Information can be added here when available.</div></article></div></main>
+<script>
+const menuButton=document.getElementById('menuButton'),nav=document.getElementById('mainNav'),overlay=document.getElementById('menuOverlay');
+function setMenu(open){nav?.classList.toggle('open',open);overlay?.classList.toggle('is-visible',open);menuButton?.classList.toggle('is-active',open);menuButton?.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)}
+menuButton?.addEventListener('click',()=>setMenu(!nav?.classList.contains('open')));overlay?.addEventListener('click',()=>setMenu(false));nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+</script>
+<script>
+(function(){
+  const pageText={
+    en:{title:'Panchayat Information',lead:'Complete history of Bir Bangran Gram Panchayats from 1952 to the present, including tenure periods and Sarpanch information.',back:'← Back to Panchayat',card:'Gram Panchayat',current:'Current Panchayat',tenure:'Tenure',sarpanch:'Sarpanch',members:'Panchayat Members',memberNote:'Information can be added here when available.',present:'Present',currentSarpanch:'Current Sarpanch',number:'Gram Panchayat No.'},
+    hi:{title:'पंचायत जानकारी',lead:'बीर बांग्रण की ग्राम पंचायतों का 1952 से वर्तमान तक का पूरा इतिहास, कार्यकाल और सरपंच की जानकारी यहाँ देखें।',back:'← पंचायत पर वापस',card:'ग्राम पंचायत',current:'वर्तमान पंचायत',tenure:'कार्यकाल',sarpanch:'सरपंच',members:'पंचगण',memberNote:'जानकारी उपलब्ध होने पर यहाँ जोड़ी जा सकती है।',present:'अब तक',currentSarpanch:'वर्तमान सरपंच',number:'ग्राम पंचायत संख्या'}
+  };
+  const data=[
+   ['December 1952 to November 1960','दिसंबर 1952 से नवंबर 1960 तक','Approx. 8 years','लगभग 8 वर्ष','Mr. Bharat Singh Rana','श्री भरत सिंह राणा','Jeldar Patti','जेलदार पट्टी'],
+   ['December 1960 to December 1963','दिसंबर 1960 से दिसंबर 1963 तक','Approx. 3 years','लगभग 3 वर्ष','Mr. Bharat Singh Rana','श्री भरत सिंह राणा','Jeldar Patti','जेलदार पट्टी'],
+   ['January 1964 to May 1971','जनवरी 1964 से मई 1971 तक','Approx. 7.5 years','लगभग साढ़े 7 वर्ष','Mr. Bharat Singh Rana','श्री भरत सिंह राणा','Nambardar Patti','नंबरदार पट्टी'],
+   ['July 1971 to May 1978','जुलाई 1971 से मई 1978 तक','Approx. 7 years','लगभग 7 वर्ष','Mr. Surajmal Bairagi','श्री सूरजमल बैरागी','',''],
+   ['June 1978 to April 1983','जून 1978 से अप्रैल 1983 तक','Approx. 5 years','लगभग 5 वर्ष','Mr. Kaliram Rana','श्री कलीराम राणा','',''],
+   ['June 1983 to May 1988','जून 1983 से मई 1988 तक','Approx. 5 years','लगभग 5 वर्ष','Mr. Kaliram Rana','श्री कलीराम राणा','',''],
+   ['June 1988 to December 1991','जून 1988 से दिसंबर 1991 तक','Approx. 2.5 years','लगभग ढाई वर्ष','Mr. Kanwarpal Rana','श्री कँवरपाल राणा','',''],
+   ['December 1991 to November 1994','दिसंबर 1991 से नवंबर 1994 तक','Approx. 3 years','लगभग 3 वर्ष','Mr. Kaliram Rana','श्री कलीराम राणा','',''],
+   ['December 1994 to February 2000','दिसंबर 1994 से फरवरी 2000 तक','Approx. 5 years','लगभग 5 वर्ष','Mr. Satpal Sharma','श्री सतपाल शर्मा','',''],
+   ['12 March 2000 to March 2005','12 मार्च 2000 से मार्च 2005 तक','5 years','5 वर्ष','Mr. Subhash Bhatt','श्री सुभाष भट्ट','',''],
+   ['10 April 2005 to June 2010','10 अप्रैल 2005 से जून 2010 तक','5 years','5 वर्ष','Mrs. Santosh Devi','श्रीमती संतोष देवी','',''],
+   ['10 July 2010 to December 2015','10 जुलाई 2010 से दिसंबर 2015 तक','5 years','5 वर्ष','Mr. Ashok Rana','श्री अशोक राणा','',''],
+   ['January 2016 to October 2022','जनवरी 2016 से अक्तूबर 2022 तक','6.5 years','साढ़े 6 वर्ष','Mr. Parveen Nagal','श्री परवीन नागल','',''],
+   ['12 November 2022 to Present','12 नवंबर 2022 से अब तक','Current','वर्तमान','Mr. Deepak Rana','श्री दीपक राणा','','वर्तमान सरपंच']
+  ];
+  function applyPageLanguage(lang){
+    const t=pageText[lang]||pageText.en;
+    document.documentElement.lang=lang;
+    document.title=lang==='hi'?'पंचायत जानकारी | बीर बांग्रण':'Panchayat Information | Bir Bangran';
+    document.querySelector('[data-i18n="panchayatPageTitle"]').textContent=t.title;
+    document.querySelector('[data-i18n="panchayatPageLead"]').textContent=t.lead;
+    document.getElementById('panchayatBack').textContent=t.back;
+    document.querySelectorAll('.panchayat-full-card').forEach((card,i)=>{
+      const d=data[i], n=i+1, isCurrent=n===14;
+      card.querySelector('.panchayat-full-badge').textContent=isCurrent?t.current:t.card;
+      card.querySelector('h2').textContent=`${t.number} ${String(n).padStart(2,'0')}`;
+      card.querySelector('.panchayat-full-period').textContent=lang==='hi'?d[1]:d[0];
+      const infos=card.querySelectorAll('.panchayat-full-info');
+      const small=card.querySelectorAll('.panchayat-full-info small');
+      small[0].textContent=t.tenure; small[1].textContent=t.sarpanch;
+      const strong=card.querySelectorAll('.panchayat-full-info strong');
+      strong[0].textContent=lang==='hi'?d[3]:d[2]; strong[1].textContent=lang==='hi'?d[5]:d[4];
+      const span=card.querySelector('.panchayat-full-info span'); if(span) span.textContent=isCurrent?t.currentSarpanch:(lang==='hi'?d[7]:d[6]);
+      const b=card.querySelector('.panchayat-panchgan-full b'); if(b)b.textContent=t.members;
+      const pg=card.querySelector('.panchayat-panchgan-full'); if(pg) pg.childNodes[pg.childNodes.length-1].textContent=' '+t.memberNote;
+    });
+    const select=document.getElementById('languageSelect'); if(select)select.value=lang;
+    localStorage.setItem('bbLanguage',lang);
+  }
+  const select=document.getElementById('languageSelect');
+  const urlLang=new URLSearchParams(location.search).get('lang');
+  const initial=(urlLang==='hi'||urlLang==='en')?urlLang:(localStorage.getItem('bbLanguage') || 'en');
+  applyPageLanguage(initial);
+  select?.addEventListener('change',e=>{applyPageLanguage(e.target.value); syncMainLinks();});
+  function syncMainLinks(){
+    document.querySelectorAll('#mainNav a[data-section]').forEach(a=>{
+      const section=a.dataset.section;
+      a.href=`index.html?section=${encodeURIComponent(section)}&lang=${encodeURIComponent(localStorage.getItem('bbLanguage')||'en')}`;
+      const active=section==='panchayat';
+      a.classList.toggle('is-active',active);
+      if(active) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    });
+    const back=document.getElementById('panchayatBack');
+    if(back) back.href=`index.html?section=panchayat&lang=${encodeURIComponent(localStorage.getItem('bbLanguage')||'en')}`;
+  }
+
+  syncMainLinks();
+  // Normal back: browser returns without an animated transition; the main page restores the Panchayat hash.
+  document.getElementById('panchayatBack')?.addEventListener('click',function(e){
+    e.preventDefault();
+    if(document.referrer && document.referrer.includes('index.html')) history.back();
+    else window.location.replace(this.href);
+  });
+})();
+</script>
+</body></html>
